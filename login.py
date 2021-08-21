@@ -34,8 +34,8 @@ def send(stu_id, is_success):
     server = smtplib.SMTP_SSL(mail_host, 465)
     server.login(mail_user, mail_pass)
     sql = 'select address from stu_info where student_id=' + '\'' + stu_id + '\''
-    db = pymysql.connect(host="sh-cynosdbmysql-grp-4y65np2q.sql.tencentcdb.com", user="ytc",
-                         password="Yan20010703", db="health_db", port=22505, charset='utf8')
+    db = pymysql.connect(host="xxxx", user="xx",
+                         password="xxxx", db="xxxx", port=3306, charset='utf8')
     cur = db.cursor()
     try:
         cur.execute(sql)
@@ -254,8 +254,8 @@ logging.basicConfig(level=logging.INFO)
 logging.info('开始任务')
 logging.info('连接数据库')
 try:
-    db = pymysql.connect(host="sh-cynosdbmysql-grp-4y65np2q.sql.tencentcdb.com", user="ytc",
-                         password="Yan20010703", db="health_db", port=22505, charset='utf8')
+    db = pymysql.connect(host="xxxx", user="xx",
+                         password="xxxx", db="xxx", port=3306, charset='utf8')
 except Exception as e:
     logging.error('连接数据库失败' + e)
     exit(1)
